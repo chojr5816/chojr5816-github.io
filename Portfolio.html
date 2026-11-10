@@ -1,0 +1,503 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Jeong Rae의 포트폴리오. AI 시스템, 데이터 분석, 웹 게임, 도시철도 연구와 학습 기록.">
+<title>Jeong Rae — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&amp;family=Abhaya+Libre:wght@500;700;800&amp;family=Syncopate:wght@400;700&amp;family=Tulpen+One&amp;display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--lime:#c2ff04;--wide:Syncopate,Arial,sans-serif;--tall:"Tulpen One","Arial Narrow",sans-serif;--abel:Abel,Arial,sans-serif;--serif:"Abhaya Libre",Georgia,serif;--ko:"Batang","Noto Serif KR",serif}
+*,*::before,*::after{box-sizing:border-box}body{margin:0;background:#000;color:#fff}a{color:inherit;text-decoration:none}button{font:inherit}p,h1,h2,h3,figure{margin:0}a:hover{color:var(--lime)}a:focus-visible,button:focus-visible,[tabindex="0"]:focus-visible{outline:2px solid var(--lime);outline-offset:4px}.wide{font-family:var(--wide);font-weight:700;text-transform:uppercase}.tall{font-family:var(--tall)}.skip{position:fixed;top:10px;left:10px;z-index:15;background:var(--lime);color:#000;padding:.5rem 1rem;transform:translateY(-150%)}.skip:focus{transform:none}.top,.bottom{position:fixed;z-index:5;left:0;right:0;background:#000a;backdrop-filter:blur(8px);font:clamp(.75rem,1.3vw,1rem)/1 var(--abel);text-transform:uppercase}.top{top:0;min-height:42px;padding:6px 1.2vw;display:grid;grid-template-columns:auto 1fr minmax(170px,390px) 1fr auto;align-items:center;gap:1.25vw}.menu{display:flex;align-items:center;gap:1vw;white-space:nowrap}.dot{width:5px;height:5px;border-radius:100%;background:#fff;display:inline-block;flex:none}.sprinkle{display:flex;justify-content:space-evenly}.ticker{overflow:hidden;white-space:nowrap}.top .ticker{border:1px solid #fff;border-radius:50px;padding:4px 0}.crawl{display:flex;width:max-content;animation:crawl 26s linear infinite}.crawl span{padding:0 1.5rem}.crawl span::before{content:"●";font-size:.48em;color:var(--lime);margin-right:.85rem;vertical-align:middle}.crawl em{font-style:normal;color:var(--lime);margin-left:1rem}@keyframes crawl{to{transform:translateX(-50%)}}.bottom{bottom:0;padding:9px 0 10px}.bottom .crawl{animation-duration:40s}.progress{height:2px;position:absolute;inset:auto 0 0;background:var(--lime);transform:scaleX(var(--progress,0));transform-origin:left}
+.scene{position:fixed;inset:0;background:radial-gradient(ellipse at 48% 53%,#331a3e 0,#120a25 27%,#000 65%);pointer-events:none}.scene canvas{width:100%;height:100%;display:block}.rail{position:relative;display:flex;align-items:stretch;width:100%;height:100vh;height:100dvh;overflow:auto hidden;overscroll-behavior-x:contain;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}.panel{position:relative;flex:0 0 100vw;min-width:0;min-height:0;display:grid;align-items:center;justify-items:center;padding:4.5rem 4vw;isolation:isolate}.panel:focus{outline:0}.solid{background:#000}.hero{text-align:center}.hero h1{font-size:clamp(2.1rem,6.1vw,7.4rem);letter-spacing:-.075em;line-height:1.02}.hero h1 span{display:block}.hero h1 span:nth-child(2){text-align:left;margin-left:-5vw}.hero h1 span:nth-child(3){margin-left:7vw}.hero h1 small{display:block;text-align:right;margin:.45rem 0 0;font:400 clamp(.82rem,1.15vw,1.1rem) var(--abel);letter-spacing:.03em}.hero h1 span,.hero h1 small{animation:arrive .9s both;animation-delay:var(--delay,0ms)}@keyframes arrive{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}.scroll-cue{position:absolute;bottom:65px;right:4vw;display:flex;align-items:center;gap:.6rem;font:1rem var(--abel);text-transform:uppercase}.scroll-cue b{color:var(--lime);font-size:1.45rem}.divider{text-align:center}.divider .wide{font-size:clamp(2.5rem,6.5vw,8rem);line-height:1}.divider .tall{font-size:clamp(3.25rem,7vw,8rem);line-height:1}
+.project{flex-basis:80vw;background:#000}.project-card{position:relative;width:min(52vw,980px);min-height:min(53vh,600px);padding:clamp(1.4rem,3vw,3.4rem);overflow:hidden;background:radial-gradient(ellipse at 94% 0,rgba(var(--tone),.95),transparent 58%),repeating-linear-gradient(135deg,transparent 0 35px,rgba(var(--tone),.12) 36px 37px),linear-gradient(138deg,#080709 12%,rgba(var(--tone),.55));box-shadow:0 0 55px rgba(var(--tone),.16)}.project-card::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(110deg,#0008,transparent)}.project-card h2,.game-copy h2,.research-copy h2{font-size:clamp(1.75rem,3.6vw,4.9rem);line-height:1.12;letter-spacing:-.08em;margin:.5rem 0 .75rem}.label,.stack,.preview-caption{font:clamp(.75rem,1.1vw,1rem) var(--abel);letter-spacing:.11em;text-transform:uppercase}.label{color:var(--lime)}.desc{font:clamp(.875rem,1.15vw,1.12rem)/1.6 var(--ko);max-width:29ch;word-break:keep-all}.stack{margin:.65rem 0 1rem;color:#f4f4f4;max-width:26vw}.white-link{display:inline-block;background:#fff;color:#000;font:700 clamp(.64rem,.86vw,.92rem) var(--wide);text-transform:uppercase;padding:.65rem 1.1rem;white-space:nowrap}.white-link:hover{background:var(--lime);color:#000}.preview{position:absolute;right:3vw;top:55%;width:30vw;height:30vh;pointer-events:none;display:grid;place-items:center;border:1px solid #fff5;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,rgba(var(--tone),.85),#111014 76%);color:#eee;box-shadow:0 14px 35px #0009}.window{display:flex;justify-content:space-between;gap:12px;padding:.3rem .6rem;font:.72rem var(--abel);position:absolute;top:0;left:0;right:0;border-bottom:1px solid #fff4;background:#0004}.preview svg{height:75%;width:75%;filter:drop-shadow(0 0 10px #fff5)}.preview-caption{position:absolute;bottom:.6rem;right:.7rem;font-size:.65rem}.game,.research{background:#000;display:grid;grid-template-columns:1fr 1fr;gap:5vw;padding-inline:10vw}.game-frame{width:min(29vw,450px);height:min(72vh,720px);display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 44% 32%,#30294c 0,#141431 27%,#070714 60%,#000 100%);border:1px solid #676287}.game-frame::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,#0000 0 3px,#fff1 4px 5px);pointer-events:none}.game-frame svg{width:88%;color:#cbf1ff;filter:drop-shadow(0 0 16px #99abff)}.game-frame span{position:absolute;top:8%;color:#c8f3ff;font:1rem var(--abel);letter-spacing:.25em}.game-copy,.research-copy{justify-self:start;z-index:1}.game-copy .desc,.research-copy .desc{max-width:39ch}.buttons{display:flex;flex-wrap:wrap;gap:.5rem}.map{width:100%;aspect-ratio:1.24;background:radial-gradient(ellipse,#17374c,#050e15 69%);color:#93edfa;border:1px solid #4a7180;display:grid;place-items:center}.map svg{height:90%;width:90%}
+.study{flex-basis:44vw;background:#000;overflow:hidden}.study-inner{width:100%;max-width:580px;position:relative;min-height:min(65vh,550px);display:grid;align-content:center;justify-items:center}.study h2{position:absolute;top:0;left:0;font:italic clamp(2.6rem,6vw,7rem)/.9 var(--tall);z-index:1}.study h2 em{color:var(--lime);margin-right:.12em}.orb{width:min(29vw,49vh);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 26%,rgba(var(--tone),1),rgba(var(--tone),.47) 47%,#17131e 73%);box-shadow:inset 0 0 40px #0009;display:grid;place-items:center}.orb svg{width:74%;color:#fff9}.round{position:absolute;bottom:0;left:1vw;border-radius:50%;background:var(--lime);color:#000;width:clamp(4.25rem,8vw,8rem);aspect-ratio:1;display:grid;place-items:center;text-transform:uppercase;font:clamp(.76rem,1.22vw,1.25rem) var(--abel);text-decoration:underline}.round:hover{background:white;color:#000}.study p{position:absolute;bottom:1rem;right:0;font:1rem var(--abel)}
+.about{flex-basis:125vw;background:#000;justify-items:start;padding-inline:9vw}.about h2{z-index:1;font-size:clamp(2.3rem,6.2vw,7rem);letter-spacing:-.095em;line-height:1.06}.about h2 span{display:block}.about h2 span:nth-child(2){margin-left:9vw;font-weight:400}.about h2 span:nth-child(3){margin-left:2vw}.about h2 span:nth-child(4){margin-left:15vw;font-weight:400}.about h2 span:last-child{margin-left:17vw;border-bottom:6px solid var(--lime);width:max-content}.portrait{position:absolute;right:6vw;width:31vw;aspect-ratio:1;overflow:hidden;background:radial-gradient(circle,#4e394d,#141018 69%,#000 83%);opacity:.8}.portrait img{width:100%;height:100%;object-fit:cover;mix-blend-mode:luminosity;mask-image:linear-gradient(90deg,transparent,#000 32%)}.bio{flex-basis:65vw;background:#000;justify-items:start}.bio p{max-width:34ch;font:clamp(1rem,1.42vw,1.38rem)/1.8 var(--ko);word-break:keep-all}.bio p:last-child{margin:4rem 0 0 11vw}.skills{background:#000;justify-items:stretch;padding-inline:8vw}.skills h2{font:800 clamp(2rem,3.5vw,4rem) var(--serif);text-transform:uppercase;margin-bottom:1rem}.skill-icon{width:min(280px,32vw);aspect-ratio:1;position:absolute;right:10vw;top:12%;color:var(--lime);opacity:.42}.tech{display:flex;gap:.5rem;flex-wrap:wrap;max-width:49rem}.tech span{font:1rem var(--abel);border:1px solid #fff6;padding:.25rem .65rem}.skill-copy{display:grid;grid-template-columns:repeat(3,1fr);gap:3vw;margin-top:10vh}.skill-copy h3{font:800 clamp(1.3rem,2.4vw,2.5rem) var(--serif);text-transform:uppercase}.skill-copy em{font-size:.55em;color:var(--lime);font-style:normal}.skill-copy p{font:.96rem/1.65 var(--ko);max-width:24ch}.contact{justify-items:start;padding-inline:5vw}.contact h2{font-size:clamp(2.5rem,8vw,9rem);letter-spacing:-.105em;line-height:1.04}.contact p{font:800 clamp(1.5rem,3.25vw,3.8rem)/1 var(--serif);text-transform:uppercase;margin:1.6rem 0}.contact .signoff{font-size:clamp(1rem,1.7vw,1.8rem);line-height:1.2}.outline{font:700 clamp(.95rem,1.5vw,1.55rem) var(--serif);text-transform:uppercase;color:var(--lime);border:2px solid var(--lime);border-radius:50px;padding:.65rem 1.65rem;display:inline-block}.outline:hover{background:var(--lime);color:#000}
+@media(max-width:760px),(max-height:500px){.top{grid-template-columns:auto 1fr auto;gap:10px;padding-inline:12px}.sprinkle{display:none}.menu{gap:8px}.rail{display:block;height:auto;overflow:visible}.panel{min-height:85svh;padding:4rem 6vw}.hero,.divider{min-height:100svh}.hero h1{font-size:clamp(1.5rem,7.5vw,4rem)}.hero h1 span:nth-child(2){margin-left:0}.hero h1 span:nth-child(3){margin-left:4vw}.scroll-cue{bottom:52px}.project{display:block;padding:4.5rem 6vw 2rem;min-height:auto}.project-card{width:100%;min-height:0;padding:1.35rem 1.15rem 3.5rem}.project-card h2,.game-copy h2,.research-copy h2{font-size:clamp(1.4rem,6vw,3.1rem)}.stack{max-width:none}.preview{position:relative;inset:auto;width:79%;height:clamp(132px,28vh,220px);margin:-2.2rem 0 0 auto}.game,.research{grid-template-columns:1fr;gap:1.3rem}.game-frame{width:min(60vw,270px);height:min(50vh,380px)}.game-copy,.research-copy{justify-self:center}.map{width:min(100%,420px)}.study{min-height:58svh;padding-block:2.6rem}.study-inner{min-height:45svh}.study h2{font-size:clamp(3rem,10vw,5rem)}.orb{width:min(57vw,34vh)}.about{min-height:75svh}.about h2{font-size:clamp(1.5rem,6vw,3rem)}.portrait{width:55vw;right:2vw;opacity:.55}.bio{min-height:0}.bio p:last-child{margin:2rem 0 0 4vw}.skills{min-height:0}.skill-icon{top:8%;right:8%}.skill-copy{grid-template-columns:1fr;gap:1.25rem;margin-top:2rem}.contact h2{font-size:clamp(2.25rem,10vw,5rem)}}
+@media(max-width:390px){.top{grid-template-columns:auto 1fr auto}.top .ticker{display:none}.menu:last-child{grid-column:3}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+
+/* Chapter artwork and distinct project layouts */
+.chapter-kicker,.chapter-index a,.chapter-aside{font:700 .85rem/1.4 var(--abel);letter-spacing:.13em;text-transform:uppercase}
+#work{background:#c2ff04;color:#12160b;justify-items:stretch;text-align:left;padding-inline:9vw}
+#work::before{content:"01";position:absolute;inset:auto 4vw 1vh auto;font:clamp(14rem,43vw,48rem)/.8 var(--tall);color:#161c0d19;pointer-events:none;z-index:-1}
+#work .chapter-kicker{display:block;margin-bottom:1.4rem}
+#work .wide{font-size:clamp(2.15rem,7.7vw,9rem);letter-spacing:-.08em}
+#work .tall{font-size:clamp(4.5rem,15vw,14rem);line-height:.74;margin-top:.15em}
+.chapter-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;width:min(100%,49rem);margin-top:2rem}
+.chapter-index a{display:flex;justify-content:space-between;border-top:1px solid currentColor;padding-top:.65rem;gap:.35rem}
+.chapter-index a:hover{color:#243d00;text-decoration:underline}
+#work a:focus-visible{outline-color:#000}
+#games{background:radial-gradient(ellipse at center,#391a5d 0,#130925 52%,#080410);color:#f7efff}
+#games::before,#research::before,#study::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none}
+#games::before{background:linear-gradient(#c595ff27 1px,transparent 1px),linear-gradient(90deg,#c595ff27 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse,#000,transparent 72%)}
+#games .tall{color:#d5a6ff;text-shadow:0 0 34px #9f4afd}
+#research{background:#d7ebf2;color:#102e3b}
+#research::before{background:repeating-radial-gradient(ellipse at 90% 35%,transparent 0 35px,#17496120 36px 37px);mask-image:linear-gradient(90deg,transparent,#000)}
+#research .tall{color:#155771}
+#study{background:#19140f;color:#fff2d7}
+#study::before{background:radial-gradient(ellipse at 50% 64%,#a661344a,transparent 62%)}
+#study .tall{color:#ffc590}
+.chapter-aside{display:block;margin:1.05rem 0 0}
+.project[id]{scroll-margin-top:42px}
+.project.layout-system{background:#16101d;grid-template-columns:1.25fr .85fr;gap:2vw;padding-inline:5vw}
+.layout-system .project-card,.layout-music .project-card,.layout-bank .project-card{width:100%;min-height:0}
+.layout-system .preview,.layout-music .preview,.layout-bank .preview{position:relative;inset:auto;width:100%;height:clamp(180px,44vh,510px)}
+.layout-system .preview{background:linear-gradient(#a760b72c 1px,transparent 1px),linear-gradient(90deg,#a760b72c 1px,transparent 1px),#271533;background-size:28px 28px}
+.project.layout-logs{background:#061610;justify-items:start;padding-inline:7vw}
+.layout-logs .project-card{border:1px solid #51f4ac60;background:linear-gradient(130deg,#0b2219,#103429);box-shadow:none}
+.layout-logs .label,.layout-logs .preview{color:#83ffca}
+.layout-logs .preview{background:repeating-linear-gradient(0deg,#123d30 0 1px,transparent 1px 19px),#071d16;border-color:#50d6a77a;top:auto;bottom:13vh}
+.project.layout-music{background:#f2e3d0;color:#29181a;grid-template-columns:1fr 1fr;gap:3vw;padding-inline:5vw}
+.layout-music .project-card{grid-column:2;grid-row:1;background:none;box-shadow:none;padding:1.6rem 0}
+.layout-music .project-card::after,.layout-bank .project-card::after{display:none}
+.layout-music .preview{grid-column:1;grid-row:1;border-radius:50% 50% 3px 3px;background:radial-gradient(ellipse,#bd5336,#381623 72%);color:#ffe1ad;box-shadow:none}
+.layout-music .label,.layout-music .stack{color:#752e22}
+.layout-music .white-link,.layout-bank .white-link{background:#231b24;color:#fff}
+.layout-music .white-link:hover,.layout-bank .white-link:hover{background:#47404d;color:#fff}
+.project.layout-bank{background:#cee0df;color:#14292a;grid-template-columns:1fr 1fr;gap:2vw;padding-inline:5vw}
+.layout-bank .project-card{background:#eaf2ec;border:1px solid #526e70;box-shadow:10px 10px 0 #41636335}
+.layout-bank .preview{background:#244744;color:#d4efe2;box-shadow:none;border-radius:0 4rem 0 4rem}
+.layout-bank .label,.layout-bank .stack{color:#254f4b}
+.project.layout-words{background:#22152f;justify-items:start;padding-inline:6vw}
+.layout-words .project-card{background:#2f2041;border-left:6px solid #d3b4ff;box-shadow:none}
+.layout-words .preview{background:radial-gradient(ellipse,#774aa0,#392151 67%,#22152f);border-radius:50%;width:min(34vw,52vh);height:auto;aspect-ratio:1;top:auto;bottom:9vh;right:4vw}
+.layout-words .window,.layout-words .preview-caption{display:none}
+@media(min-width:761px) and (min-height:501px){.project-card .desc{max-width:27ch}.layout-system .project-card{padding-inline:clamp(1rem,2vw,2.4rem)}.layout-logs .preview{right:3vw;width:25vw}.layout-words .preview{width:min(27vw,47vh)}}
+@media(max-width:760px),(max-height:500px){
+  #work{padding-inline:6vw}.chapter-index{grid-template-columns:1fr 1fr;gap:.7rem}.chapter-index a{font-size:.75rem}
+  .project.layout-system,.project.layout-music,.project.layout-bank,.project.layout-words,.project.layout-logs{padding:4rem 6vw 3rem}
+  .layout-system .preview,.layout-music .preview,.layout-bank .preview,.layout-logs .preview,.layout-words .preview{inset:auto;width:min(100%,420px);height:clamp(130px,26vh,230px);margin:.85rem auto 0}
+  .layout-words .preview{width:clamp(145px,45vw,230px);height:auto}
+}
+
+
+/* A shared ink, parchment and sage palette carries across the chapters. */
+:root{--lime:#c7deb5;--paper:#eee9de;--ink:#202824;--muted-sage:#a5bc9a}
+#work{background:#dce6d3;color:var(--ink)}
+#work::before{color:#253b2522}
+#work a:hover{color:#305838}
+.scene{background:radial-gradient(ellipse at 54% 55%,#242d30 0,#141a1d 38%,#0c1011 75%)}
+#games{background:radial-gradient(ellipse at center,#283449,#171f2b 60%,#12191f)}
+#games::before{background:linear-gradient(#acbfd228 1px,transparent 1px),linear-gradient(90deg,#acbfd228 1px,transparent 1px);background-size:46px 46px}
+#games .tall{color:#c2d6df;text-shadow:0 0 27px #7b9db85e}
+#research{background:#e4eae4;color:#243f37}
+#research .tall{color:#41685c}
+#study{background:#26241f;color:#f4ead7}
+#study .tall{color:#d5ba97}
+.project.layout-system{background:#1c2722}
+.layout-system .project-card{background:linear-gradient(130deg,#17251f,#304639);box-shadow:none}
+.layout-system .preview{background:linear-gradient(#a9c8ad24 1px,transparent 1px),linear-gradient(90deg,#a9c8ad24 1px,transparent 1px),#314438;background-size:28px 28px}
+.project.layout-logs{background:#1e2626}
+.layout-logs .project-card{background:linear-gradient(130deg,#202b29,#304342);border-color:#8faeab60}
+.layout-logs .label,.layout-logs .preview{color:#c2e2d4}
+.layout-logs .preview{background:repeating-linear-gradient(0deg,#466a5c45 0 1px,transparent 1px 19px),#23322e;border-color:#75988c}
+.project.layout-music{background:#eee5d8}
+.layout-music .preview{background:radial-gradient(ellipse,#a96855,#3c292b 75%);color:#f1d6b7}
+.project.layout-bank{background:#dce5e1}
+.layout-bank .project-card{background:#f2f1e8}
+.project.layout-words{background:#282430}
+.layout-words .project-card{background:#393345;border-left-color:#c8bbd1}
+.layout-words .preview{background:radial-gradient(ellipse,#766981,#473d55 67%,#282430)}
+.study{background:#1d2521}
+.orb{filter:saturate(.45)}
+.game,.research{background:#161e1c}
+.game{gap:4vw;padding-inline:8vw}
+.arcade-frame{position:relative;width:min(33vw,510px);aspect-ratio:54/74;max-height:calc(100dvh - 9rem);overflow:hidden;border:1px solid #8da49e;border-radius:14px;background:#091412;box-shadow:0 12px 70px #0008}
+.arcade-frame [hidden],.slide-controls[hidden]{display:none}
+.arcade-cover{border:0;width:100%;height:100%;position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:.8rem;padding:1rem;color:#e6f2db;text-align:center;cursor:pointer;background:radial-gradient(ellipse at 48% 34%,#415b58,#1c3433 49%,#111b1e 86%)}
+.arcade-cover::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 4px,#c2e8d215 4px 5px);pointer-events:none}
+.arcade-cover svg{width:clamp(100px,18vw,260px);filter:drop-shadow(0 0 13px #7cb8a1)}
+.arcade-cover strong,.arcade-cover span,.arcade-cover em{position:relative}
+.arcade-cover strong{font:700 clamp(.9rem,2vw,1.8rem) var(--wide)}
+.arcade-cover span{font:1rem var(--abel);letter-spacing:.16em}
+.arcade-cover em{font:700 .85rem var(--abel);font-style:normal;background:#d6e8c9;color:#1f2d25;border-radius:50px;padding:.42rem .85rem}
+.arcade-cover:hover em{background:#fff}
+.arcade-frame iframe{position:absolute;left:50%;top:50%;border:0;width:540px;height:740px;transform:translate(-50%,-50%) scale(var(--game-scale,1));transform-origin:center;background:#020408}
+.arcade-close{position:absolute;z-index:2;top:8px;right:8px;border:1px solid #b4d2c0;border-radius:50%;background:#101916;color:#fff;width:30px;height:30px;cursor:pointer}
+.game-help{margin-top:1rem;font:.9rem/1.5 var(--abel);color:#c1d2c3}
+.about{background:#1b2420}
+.bio{flex-basis:100vw;background:var(--paper);color:var(--ink);padding-inline:8vw}
+.bio-inner{width:100%;max-width:1050px;margin:auto}
+.bio h2{font:700 clamp(1.55rem,3.6vw,3.5rem)/1.18 var(--wide);letter-spacing:-.06em;margin:.5rem 0 1.4rem}
+.bio .label{color:#496652}
+.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem}
+.experience-grid article{border-top:1px solid #96a396;padding-top:.8rem}
+.experience-grid h3{font:700 clamp(1rem,1.6vw,1.32rem)/1.35 system-ui,sans-serif;margin:0 0 .5rem}
+.bio .experience-grid p{max-width:55ch;margin:0;font:clamp(.91rem,1.15vw,1.05rem)/1.62 system-ui,"Malgun Gothic",sans-serif}
+.skills{background:#202a26}
+.contact-actions{display:flex;gap:.6rem 1rem;flex-wrap:wrap;align-items:center}
+.contact-email{font:1rem var(--abel);text-decoration:underline;text-underline-offset:.2em}
+.slide-controls{display:flex;position:fixed;z-index:6;right:1rem;bottom:2.65rem;gap:3px;align-items:center;background:#17221def;border:1px solid #91ac9c80;border-radius:50px;padding:4px;box-shadow:0 7px 22px #0005;color:#edf4e9;font:700 .9rem var(--abel)}
+.slide-controls button,.slide-controls select{background:transparent;color:inherit;border:0}
+.slide-controls button{width:34px;height:34px;border-radius:50%;cursor:pointer}
+.slide-controls button:hover:not(:disabled){background:#486052}
+.slide-controls button:disabled{opacity:.35;cursor:default}
+.slide-controls select{width:clamp(88px,14vw,154px);font:inherit}
+.slide-controls select option{background:#202b25;color:white}
+.slide-count{padding:0 .35rem;white-space:nowrap;color:#d4e2d5}
+@media(max-width:760px),(max-height:500px){
+ .panel[id]{scroll-margin-top:44px}
+ .arcade-frame{width:min(75vw,330px);max-height:none}
+ .game{padding-inline:6vw}
+ .bio{padding-inline:6vw}
+ .experience-grid{grid-template-columns:1fr;gap:1rem}
+ .slide-controls{right:.6rem;bottom:2.3rem}
+ .slide-controls button{width:31px;height:31px}
+}
+@media(max-height:760px) and (min-width:761px){.bio h2{margin-bottom:.7rem}.experience-grid{gap:.6rem 1.5rem}.bio .experience-grid p{font-size:.9rem;line-height:1.45}}
+
+.personal-intro{background:#000;color:#f5f5f5;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;align-items:start;justify-items:start;gap:1.75rem 5vw;padding:clamp(4.5rem,10vh,8rem) 5vw}
+.personal-intro .intro-opening{grid-area:1/1;max-width:41ch}
+.personal-intro .intro-closing{grid-area:2/2;align-self:end;max-width:43ch}
+.personal-intro p,.personal-intro p:last-child{margin:0;max-width:none;font:clamp(.89rem,1.16vw,1.08rem)/1.65 system-ui,"Malgun Gothic",sans-serif;word-break:keep-all}
+.personal-intro p+p,.personal-intro p+p:last-child{margin-top:.9rem}
+@media(max-width:760px),(max-height:500px){.personal-intro{display:block;min-height:0;padding:4.5rem 6vw}.personal-intro .intro-closing{margin:3rem 0 0 auto}.personal-intro .intro-opening{max-width:39ch}}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">프로젝트로 건너뛰기</a>
+<div class="scene" aria-hidden="true"><canvas id="texture"></canvas></div>
+<header class="top">
+<nav class="menu" aria-label="포트폴리오"><a href="#home">Portfolio</a><span class="dot" aria-hidden="true"></span><a href="#about">About</a></nav>
+<div class="sprinkle" aria-hidden="true"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<div class="ticker" aria-hidden="true"><div class="crawl"><span>JEONG RAE · PROJECTS &amp; NOTES</span><span>JEONG RAE · PROJECTS &amp; NOTES</span><span>JEONG RAE · PROJECTS &amp; NOTES</span><span>JEONG RAE · PROJECTS &amp; NOTES</span></div></div>
+<div class="sprinkle" aria-hidden="true"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+<nav class="menu" aria-label="프로젝트와 연락처"><a href="#work">Work</a><span class="dot" aria-hidden="true"></span><a href="#contact">Contact</a></nav>
+</header>
+<main class="rail" id="rail" tabindex="0" aria-label="Jeong Rae 포트폴리오">
+<section class="panel hero" id="home" tabindex="-1"><h1 class="wide"><span data-drift=".11">JEONG RAE</span><span data-drift="-.10" style="--delay:120ms">PROJECTS &amp;</span><span data-drift=".15" style="--delay:240ms">NOTES</span><small style="--delay:360ms">JEONG RAE / PORTFOLIO</small></h1><a class="scroll-cue" href="#work">Scroll to explore <b aria-hidden="true">→</b></a></section>
+<section class="panel divider" id="work" tabindex="-1" aria-label="Selected Work"><div><span class="chapter-kicker">01 / PORTFOLIO INDEX</span><h2><span class="wide" data-drift=".05" style="display:block">SELECTED</span><span class="tall" data-drift="-.07" style="display:block">WORK</span></h2><nav class="chapter-index" aria-label="포트폴리오 섹션"><a href="#first-project">Projects <span>→</span></a><a href="#games">Game <span>→</span></a><a href="#research">Research <span>→</span></a><a href="#study">Study <span>→</span></a></nav></div></section>
+<article class="panel project layout-system" id="first-project" tabindex="-1" aria-label="StoreOpsAI" style="--tone:181,43,124"><div class="project-card"><p class="label">01 / AI · FULL STACK</p><h2 class="wide" data-drift=".035">StoreOpsAI</h2><p class="desc">CCTV에서 감지된 사건을 확인하고 수요 예측으로 발주 초안을 관리하는 매장 운영 도구입니다. 운영 기록과 점검 규정을 질의할 수 있습니다.</p><p class="stack">React · FastAPI · PostgreSQL · Docker Compose</p><a class="white-link" href="https://github.com/chojr5816/StoreOpsAI">Code view ↗</a></div><div class="preview" data-drift="-.065" aria-label="프로젝트 개념도" role="img"><div class="window"><span>● ● ●</span><span>01 / AI · FULL STACK</span></div><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M19 31h18v14H19zM63 31h18v14H63zM41 68h18v14H41zM28 45v12h44V45M50 57v11"/><path d="M19 91h62" opacity=".38"/></svg><div class="preview-caption">PROJECT CONCEPT</div></div></article>
+<article class="panel project layout-logs" aria-label="Security Log Risk Prediction" style="--tone:40,83,182"><div class="project-card"><p class="label">02 / MACHINE LEARNING</p><h2 class="wide" data-drift=".035">Security Log<br>Risk Prediction</h2><p class="desc">보안 로그 텍스트를 TF-IDF로 변환하고 세 가지 분류 모델을 비교했습니다. 클래스 불균형을 고려해 Macro F1도 평가했습니다.</p><p class="stack">Python · scikit-learn · XGBoost · LightGBM</p><a class="white-link" href="https://github.com/chojr5816/security-log-risk-prediction">Code view ↗</a></div><div class="preview" data-drift="-.065" aria-label="프로젝트 개념도" role="img"><div class="window"><span>● ● ●</span><span>02 / MACHINE LEARNING</span></div><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M18 83V22m0 61h66M26 77V61h9v16m7 0V48h9v29m7 0V37h9v40m7 0V25h9v52"/><path d="m24 53 16-13 12 3 14-15 17-10" opacity=".55"/></svg><div class="preview-caption">PROJECT CONCEPT</div></div></article>
+<article class="panel project layout-music" aria-label="Lyrics Sentiment Dashboard" style="--tone:181,70,40"><div class="project-card"><p class="label">03 / TEXT MINING</p><h2 class="wide" data-drift=".035">Lyrics Sentiment<br>Dashboard</h2><p class="desc">1970~2025년 지니 차트 가사에서 키워드의 등장 추이와 긍정·부정 감성 변화를 연대별로 살펴봅니다.</p><p class="stack">Python · Streamlit · KoNLPy · Pandas</p><a class="white-link" href="https://github.com/chojr5816/lyrics-sentiment-dashboard">Code view ↗</a></div><div class="preview" data-drift="-.065" aria-label="프로젝트 개념도" role="img"><div class="window"><span>● ● ●</span><span>03 / TEXT MINING</span></div><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M18 83V22m0 61h67M23 68q11-18 21-4t19-13t23-21M23 52q13 0 24-12t18 1t21-15"/><path d="M19 40h66M19 62h66" opacity=".29"/></svg><div class="preview-caption">PROJECT CONCEPT</div></div></article>
+<article class="panel project layout-bank" aria-label="Bank System" style="--tone:38,118,111"><div class="project-card"><p class="label">04 / DATABASE · SYSTEM</p><h2 class="wide" data-drift=".035">Bank System</h2><p class="desc">사용자별 계좌 개설과 입출금, 이체를 구현했습니다. 이체 도중 오류가 나면 전체 트랜잭션을 롤백하도록 설계했습니다.</p><p class="stack">Python · Oracle Database · SQL</p><a class="white-link" href="https://github.com/chojr5816/Bank-System">Code view ↗</a></div><div class="preview" data-drift="-.065" aria-label="프로젝트 개념도" role="img"><div class="window"><span>● ● ●</span><span>04 / DATABASE · SYSTEM</span></div><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m17 34 33-16 33 16H17Zm5 43h56m-62 8h68M28 41v30m15-30v30m14-30v30m15-30v30"/></svg><div class="preview-caption">PROJECT CONCEPT</div></div></article>
+<article class="panel project layout-words" aria-label="Word Frequency Dashboard" style="--tone:114,53,173"><div class="project-card"><p class="label">05 / TEXT ANALYSIS</p><h2 class="wide" data-drift=".035">Word Frequency<br>Dashboard</h2><p class="desc">한국어 텍스트를 형태소 단위로 분석하고 불용어를 제거해 단어 빈도와 워드클라우드를 보여줍니다.</p><p class="stack">Streamlit · KoNLPy · WordCloud</p><a class="white-link" href="https://github.com/chojr5816/WordFreqProject">Code view ↗</a></div><div class="preview" data-drift="-.065" aria-label="프로젝트 개념도" role="img"><div class="window"><span>● ● ●</span><span>05 / TEXT ANALYSIS</span></div><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><g fill="currentColor" stroke="none" font-family="monospace" text-anchor="middle"><text x="50" y="36" font-size="11">TOKEN</text><text x="50" y="58" font-size="16">WORDS</text><text x="50" y="73" font-size="8">FREQUENCY</text></g></svg><div class="preview-caption">PROJECT CONCEPT</div></div></article>
+<section class="panel divider" id="games" tabindex="-1" aria-label="Project GAME"><div><p class="wide" data-drift="0.05">PROJECT</p><p class="tall" data-drift="-0.07">GAME</p><span class="chapter-aside">02 / BROWSER ARCADE</span></div></section>
+<section class="panel game" aria-label="Sky Strikers"><div class="arcade-frame"><button class="arcade-cover" type="button" id="game-cover" aria-label="Sky Strikers 화면 안에서 실행"><span>PROJECT GAME / 06</span><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m50 30 7 24 16 11v8l-19-5v9h-8v-9l-19 5v-8l16-11 7-24ZM36 30v8m28-8v8M50 18v7M40 84l-2 6m22-6 2 6"/><circle cx="22" cy="24" r="1"/><circle cx="79" cy="39" r="1"/><circle cx="17" cy="58" r="1"/></svg><strong>SKY STRIKERS</strong><em>▶ 화면에서 플레이</em></button><iframe id="embedded-game" title="Sky Strikers 1945 게임" data-src="https://chojr5816.github.io/H26_web/GAME/shooting1945.html" hidden></iframe><button type="button" class="arcade-close" id="game-close" aria-label="게임 닫기" hidden>×</button></div><div class="game-copy"><p class="label">06 / Web game</p><h2 class="wide" data-drift=".04">Sky<br>Strikers</h2><p class="desc">브라우저에서 즐기는 1945 스타일 슈팅 게임입니다. HTML, CSS, JavaScript로 게임 로직을 구현했습니다.</p><p class="stack">HTML · CSS · JavaScript</p><div class="buttons"><a class="white-link" href="https://chojr5816.github.io/H26_web/GAME/shooting1945.html" target="_blank" rel="noopener">새 탭에서 열기 ↗</a><a class="white-link" href="https://github.com/chojr5816/Sky-Strikers">Code view ↗</a></div><p class="game-help">화면을 눌러 실행한 뒤 방향키로 이동, Z 또는 Space로 발사, X로 폭탄을 사용하세요.</p></div></section>
+<section class="panel divider" id="research" tabindex="-1" aria-label="Project RESEARCH"><div><p class="wide" data-drift="0.05">PROJECT</p><p class="tall" data-drift="-0.07">RESEARCH</p><span class="chapter-aside">03 / SEOUL METRO</span></div></section>
+<section class="panel research" aria-label="서울 도시철도 혼잡도 분석"><figure class="map" data-drift="-.05" role="img" aria-label="도시철도 노선 개념도"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 67h24l16-35h36M16 36h18l20 32h30M50 21v62"/><g fill="#17171a"><circle cx="32" cy="36" r="3"/><circle cx="50" cy="53" r="4"/><circle cx="72" cy="32" r="3"/><circle cx="72" cy="68" r="3"/></g></svg></figure><div class="research-copy"><p class="label">07 / Applied Research</p><h2 class="wide">Subway<br>Congestion</h2><p class="desc">서울 도시철도와 기상 공공데이터를 결합해 시간대별 혼잡도를 분석하고, R과 Shiny로 혼잡도와 최단 경로를 탐색할 수 있도록 시각화한 연구입니다.</p><p class="stack">R · Shiny · Plotly · GIS</p><a class="white-link" href="https://doi.org/10.47116/apjcri.2026.03.32">Paper view ↗</a></div></section>
+<section class="panel divider" id="study" tabindex="-1" aria-label="Project STUDY"><div><p class="wide" data-drift="0.05">PROJECT</p><p class="tall" data-drift="-0.07">STUDY</p><span class="chapter-aside">04 / LEARNING ARCHIVE</span></div></section>
+<article class="panel study" style="--tone:144,62,132"><div class="study-inner"><h2><em>01</em> Database</h2><div class="orb"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m17 34 33-16 33 16H17Zm5 43h56m-62 8h68M28 41v30m15-30v30m14-30v30m15-30v30"/></svg></div><a class="round" href="https://github.com/chojr5816/h26_database">Code view ↗</a><p>Oracle · SQL</p></div></article><article class="panel study" style="--tone:49,69,159"><div class="study-inner"><h2><em>02</em> Algorithm</h2><div class="orb"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M18 83V22m0 61h66M26 77V61h9v16m7 0V48h9v29m7 0V37h9v40m7 0V25h9v52"/><path d="m24 53 16-13 12 3 14-15 17-10" opacity=".55"/></svg></div><a class="round" href="https://github.com/chojr5816/h26_algorithm">Code view ↗</a><p>알고리즘 연습</p></div></article><article class="panel study" style="--tone:155,91,33"><div class="study-inner"><h2><em>03</em> Java</h2><div class="orb"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M24 36 11 50l13 14m52-28 13 14-13 14M58 28 42 72"/><circle cx="50" cy="50" r="35" opacity=".24"/></svg></div><a class="round" href="https://github.com/chojr5816/lecture_Java26">Code view ↗</a><p>Java 강의 실습</p></div></article><article class="panel study" style="--tone:36,118,109"><div class="study-inner"><h2><em>04</em> Web</h2><div class="orb"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M24 36 11 50l13 14m52-28 13 14-13 14M58 28 42 72"/><circle cx="50" cy="50" r="35" opacity=".24"/></svg></div><a class="round" href="https://github.com/chojr5816/H26_web">Code view ↗</a><p>HTML · CSS · JS</p></div></article><article class="panel study" style="--tone:115,58,150"><div class="study-inner"><h2><em>05</em> Text Mining</h2><div class="orb"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><g fill="currentColor" stroke="none" font-family="monospace" text-anchor="middle"><text x="50" y="36" font-size="11">TOKEN</text><text x="50" y="58" font-size="16">WORDS</text><text x="50" y="73" font-size="8">FREQUENCY</text></g></svg></div><a class="round" href="https://github.com/chojr5816/H26_TextMining">Code view ↗</a><p>텍스트 마이닝 실습</p></div></article>
+<section class="panel about" id="about" tabindex="-1"><div class="portrait"><img src="https://avatars.githubusercontent.com/u/270872836?v=4&amp;s=600" width="600" height="600" alt="Jeong Rae의 GitHub 프로필 이미지" loading="lazy"></div><h2 class="wide"><span>Hey! I'm Jeong Rae</span><span data-drift=".06">Here are some</span><span>Things I made.</span><span data-drift=".09">And what</span><span>I learned.</span></h2></section>
+<section class="panel bio personal-intro" id="experience" aria-label="자기소개와 포부">
+  <div class="intro-opening">
+    <p>안녕하세요, 조정래입니다. 저는 복잡한 데이터를 정리하고, 그 안에서 찾은 정보를 사람들이 직접 써볼 수 있는 화면으로 만드는 과정이 좋습니다.</p>
+    <p>서울 도시철도 혼잡도 연구에서는 시간대별 데이터를 정리하고, 노선도에서 혼잡도와 최단 경로를 함께 살펴볼 수 있도록 구현했습니다. 이때부터 화면을 만들기 전에 사용자가 어떤 정보를 보고 무엇을 결정해야 하는지 먼저 생각하게 됐습니다.</p>
+  </div>
+  <div class="intro-closing">
+    <p>StoreOpsAI에서는 팀원들과 무인매장 운영을 돕는 서비스를 만들었습니다. 저는 영상에서 감지한 행동을 점주에게 알리는 기능을 맡았습니다. 판단하기 어려운 장면은 확인된 내용과 불확실한 부분을 나눠, 점주가 무엇을 더 살펴봐야 하는지 알 수 있도록 했습니다.</p>
+    <p>앞으로도 사용자가 어디서 막히는지 먼저 살피고, 그 문제를 해결하는 기능부터 만들고 싶습니다. 팀원들과 만든 결과를 직접 써보고, 예상과 다르게 동작하는 부분을 함께 찾아 개선해 나가겠습니다.</p>
+  </div>
+</section>
+<section class="panel skills" aria-labelledby="skills-title"><div class="skill-icon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M24 36 11 50l13 14m52-28 13 14-13 14M58 28 42 72"/><circle cx="50" cy="50" r="35" opacity=".24"/></svg></div><div><h2 id="skills-title">My Skill</h2><div class="tech"><span>Python</span><span>R</span><span>Java</span><span>JavaScript</span><span>SQL</span><span>React</span><span>FastAPI</span><span>Streamlit</span><span>Shiny</span><span>PostgreSQL</span><span>Oracle</span><span>Docker</span><span>Git</span></div><div class="skill-copy"><article><h3><em>01.</em> Data &amp; ML</h3><p>텍스트 전처리, 탐색적 분석, 분류 모델 평가.</p></article><article><h3><em>02.</em> Web &amp; API</h3><p>대시보드, 사용자 화면, 웹 서비스 API.</p></article><article><h3><em>03.</em> Systems</h3><p>관계형 데이터베이스, 트랜잭션, Docker Compose.</p></article></div></div></section>
+<section class="panel contact" id="contact" tabindex="-1"><div><h2 class="wide">Jeong Rae</h2><p>Interested in<br>my work?</p><div class="contact-actions"><a class="outline" href="https://outlook.live.com/mail/0/deeplink/compose?to=chojr3312%40gmail.com" target="_blank" rel="noopener">Send me an e-mail ↗</a><a class="contact-email" href="https://github.com/chojr5816">GitHub ↗</a></div><p class="signoff">Thanks for your visit!<br>@chojr5816</p><a class="white-link" href="#home">Back to start ←</a></div></section>
+</main>
+<nav class="slide-controls" aria-label="슬라이드 이동" hidden><button type="button" id="slide-previous" aria-label="이전 슬라이드">←</button><select id="slide-picker" aria-label="슬라이드 선택"></select><span class="slide-count" id="slide-count" aria-hidden="true"></span><button type="button" id="slide-next" aria-label="다음 슬라이드">→</button></nav>
+<footer class="bottom ticker"><div class="crawl" aria-hidden="true"><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span><span>JEONG RAE · SELECTED WORK <em>PORTFOLIO</em></span></div><div class="progress" aria-hidden="true"></div></footer>
+<script>
+const rail = document.querySelector('#rail');
+const vertical = matchMedia('(max-width:760px),(max-height:500px)');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const drifters = [...document.querySelectorAll('[data-drift]')];
+let frame = 0;
+
+const panels = [...rail.querySelectorAll('.panel')];
+const controls = document.querySelector('.slide-controls');
+const slidePicker = document.querySelector('#slide-picker');
+const slideCount = document.querySelector('#slide-count');
+const previous = document.querySelector('#slide-previous');
+const next = document.querySelector('#slide-next');
+let activeSlide = -1;
+let pendingSlide = null;
+let settleTimer;
+const chapterNames = {
+  home: '첫 화면', work: '작업 목차', games: '게임', research: '연구',
+  study: '학습 기록', about: '소개', experience: '경험과 포부', contact: '연락처'
+};
+panels.forEach((panel, index) => {
+  if (!panel.id) panel.id = 'slide-' + (index + 1);
+  panel.tabIndex = -1;
+  const name = chapterNames[panel.id] || panel.getAttribute('aria-label') ||
+    panel.querySelector('h2')?.textContent.trim() || '슬라이드 ' + (index + 1);
+  slidePicker.add(new Option(name, panel.id));
+});
+controls.hidden = false;
+
+function displaySlide(index) {
+  if (index === activeSlide) return;
+  activeSlide = index;
+  slidePicker.selectedIndex = index;
+  slideCount.textContent = (index + 1) + ' / ' + panels.length;
+  previous.disabled = index === 0;
+  next.disabled = index === panels.length - 1;
+}
+
+function syncSlides() {
+  if (pendingSlide !== null) return;
+  const offset = vertical.matches ? 62 : 12;
+  const index = panels.findIndex(panel => {
+    const bounds = panel.getBoundingClientRect();
+    return vertical.matches ? bounds.bottom > offset : bounds.right > offset;
+  });
+  if (index >= 0) displaySlide(index);
+}
+
+function pickSlide(index) {
+  if (index < 0 || index >= panels.length) return;
+  goTo(panels[index].id, false);
+}
+
+function updateSlideTarget(panel) {
+  const index = panels.indexOf(panel);
+  if (index < 0) return;
+  clearTimeout(settleTimer);
+  pendingSlide = index;
+  displaySlide(index);
+  settleTimer = setTimeout(() => {
+    pendingSlide = null;
+    syncSlides();
+  }, reduced.matches ? 20 : 650);
+}
+
+previous.addEventListener('click', () => pickSlide(activeSlide - 1));
+next.addEventListener('click', () => pickSlide(activeSlide + 1));
+slidePicker.addEventListener('change', () => pickSlide(slidePicker.selectedIndex));
+window.addEventListener('keydown', event => {
+  if (event.altKey || event.ctrlKey || event.metaKey || event.target.closest('a,button,input,select,textarea,iframe,[contenteditable]')) return;
+  const offset = event.key === 'ArrowLeft' ? -1 : event.key === 'ArrowRight' ? 1 : 0;
+  if (!offset) return;
+  event.preventDefault();
+  pickSlide(activeSlide + offset);
+});
+
+const arcade = document.querySelector('.arcade-frame');
+const gameCover = document.querySelector('#game-cover');
+const gameClose = document.querySelector('#game-close');
+const gameFrame = document.querySelector('#embedded-game');
+
+function resizeGame() {
+  const scale = Math.min(arcade.clientWidth / 540, arcade.clientHeight / 740);
+  arcade.style.setProperty('--game-scale', scale);
+}
+
+gameCover.addEventListener('click', () => {
+  gameFrame.src = gameFrame.dataset.src;
+  gameFrame.hidden = false;
+  gameClose.hidden = false;
+  gameCover.hidden = true;
+  resizeGame();
+  gameFrame.focus();
+});
+gameClose.addEventListener('click', () => {
+  gameFrame.hidden = true;
+  gameFrame.src = 'about:blank';
+  gameClose.hidden = true;
+  gameCover.hidden = false;
+  gameCover.focus();
+});
+if ('ResizeObserver' in window) new ResizeObserver(resizeGame).observe(arcade);
+window.addEventListener('resize', resizeGame);
+
+
+function update() {
+  frame = 0;
+  syncSlides();
+  const position = vertical.matches ? scrollY : rail.scrollLeft;
+  const limit = vertical.matches
+    ? document.documentElement.scrollHeight - innerHeight
+    : rail.scrollWidth - rail.clientWidth;
+  document.documentElement.style.setProperty('--progress', limit > 0 ? position / limit : 0);
+  for (const element of drifters) {
+    if (vertical.matches || reduced.matches) {
+      element.style.transform = '';
+      continue;
+    }
+    const panel = element.closest('.panel').getBoundingClientRect();
+    const offset = panel.left + panel.width / 2 - innerWidth / 2;
+    const distance = Math.max(-innerWidth, Math.min(innerWidth, offset));
+    element.style.transform = 'translate3d(' + distance * Number(element.dataset.drift) + 'px,0,0)';
+  }
+}
+
+function scheduleUpdate() {
+  if (!frame) frame = requestAnimationFrame(update);
+}
+rail.addEventListener('scroll', scheduleUpdate, {passive:true});
+window.addEventListener('scroll', scheduleUpdate, {passive:true});
+window.addEventListener('resize', scheduleUpdate);
+update();
+
+rail.addEventListener('wheel', (event) => {
+  if (vertical.matches || event.ctrlKey || event.shiftKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+  event.preventDefault();
+  const multiplier = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? rail.clientWidth : 1;
+  rail.scrollLeft += event.deltaY * multiplier;
+}, {passive:false});
+
+function goTo(id, moveFocus) {
+  const panel = document.getElementById(id);
+  if (!panel) return;
+  updateSlideTarget(panel);
+  panel.scrollIntoView({behavior: reduced.matches ? 'auto' : 'smooth', block: 'start', inline: 'start'});
+  if (moveFocus) panel.focus({preventScroll:true});
+}
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  const hash = link.getAttribute('href');
+  event.preventDefault();
+  if (location.hash !== hash) history.pushState(null, '', hash);
+  goTo(hash.slice(1), true);
+});
+window.addEventListener('popstate', () => goTo(location.hash.slice(1) || 'home', false));
+
+rail.addEventListener('keydown', (event) => {
+  if (vertical.matches || event.target.closest('a,button,input')) return;
+  const direction = {ArrowDown:1, ArrowUp:-1, PageDown:1, PageUp:-1, ' ':event.shiftKey ? -1 : 1}[event.key];
+  if (!direction) return;
+  event.preventDefault();
+  const step = event.key.startsWith('Arrow') ? 75 : rail.clientWidth * .84;
+  rail.scrollBy({left:step * direction, behavior:reduced.matches ? 'auto' : 'smooth'});
+});
+
+const canvas = document.querySelector('#texture');
+const ctx = canvas.getContext('2d', {alpha:true});
+let textureFrame = 0;
+
+function drawTexture(time) {
+  textureFrame = 0;
+  if (!ctx || document.hidden) return;
+  const width = canvas.width;
+  const height = canvas.height;
+  if (!width || !height) return;
+  ctx.clearRect(0,0,width,height);
+  ctx.globalCompositeOperation = 'screen';
+  const t = reduced.matches ? 0 : time * .00033;
+  const colors = ['#3a6458','#384f68','#674f62','#536a4e','#38675f'];
+  for (let layer = 0; layer < colors.length; layer += 1) {
+    const x = width * (.49 + .17 * Math.sin(t + layer * 1.35));
+    const y = height * (.47 + .21 * Math.cos(t * .8 + layer * 1.7));
+    const radius = Math.min(width,height) * (.27 + layer * .035);
+    const glow = ctx.createRadialGradient(x,y,0,x,y,radius);
+    glow.addColorStop(0,colors[layer] + 'ad');
+    glow.addColorStop(.43,colors[layer] + '55');
+    glow.addColorStop(1,colors[layer] + '00');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0,0,width,height);
+  }
+  if (!reduced.matches) textureFrame = requestAnimationFrame(drawTexture);
+}
+
+function resizeTexture() {
+  canvas.width = Math.round(innerWidth * .65);
+  canvas.height = Math.round(innerHeight * .65);
+  if (textureFrame) cancelAnimationFrame(textureFrame);
+  drawTexture(performance.now());
+}
+if (ctx) {
+  resizeTexture();
+  window.addEventListener('resize', resizeTexture);
+  document.addEventListener('visibilitychange', resizeTexture);
+  reduced.addEventListener('change', resizeTexture);
+}
+
+function setupSlideEffects() {
+  if (!('IntersectionObserver' in window) || !('animate' in Element.prototype)) return;
+
+  const opening = {
+    rise: {opacity: 0, translate: '0 34px'},
+    fromLeft: {opacity: 0, translate: '-50px 0'},
+    fromRight: {opacity: 0, translate: '50px 0'},
+    wipe: {opacity: .25, clipPath: 'inset(0 100% 0 0)'},
+    lens: {opacity: .25, clipPath: 'circle(8% at 50% 50%)', scale: .93},
+    zoom: {opacity: 0, scale: .92},
+    flip: {opacity: 0, transform: 'perspective(680px) rotateX(16deg)'},
+    focus: {opacity: 0, filter: 'blur(8px)'}
+  };
+  const resting = {
+    rise: {opacity: 1, translate: '0 0'},
+    fromLeft: {opacity: 1, translate: '0 0'},
+    fromRight: {opacity: 1, translate: '0 0'},
+    wipe: {opacity: 1, clipPath: 'inset(0 0 0 0)'},
+    lens: {opacity: 1, clipPath: 'circle(76% at 50% 50%)', scale: 1},
+    zoom: {opacity: 1, scale: 1},
+    flip: {opacity: 1, transform: 'perspective(680px) rotateX(0deg)'},
+    focus: {opacity: 1, filter: 'blur(0px)'}
+  };
+  // Animate content layers independently of the rail and its parallax transform.
+  const treatments = [
+    ['#work', [['.chapter-kicker', 'rise'], ['h2', 'wipe'], ['.chapter-index a', 'rise']]],
+    ['.layout-system', [['.project-card', 'fromLeft'], ['.preview', 'fromRight']]],
+    ['.layout-logs', [['.project-card', 'rise'], ['.preview', 'wipe']]],
+    ['.layout-music', [['.preview', 'lens'], ['.project-card', 'fromRight']]],
+    ['.layout-bank', [['.project-card', 'flip'], ['.preview', 'fromRight']]],
+    ['.layout-words', [['.project-card', 'focus'], ['.preview', 'zoom']]],
+    ['#games', [['.wide', 'zoom'], ['.tall', 'rise'], ['.chapter-aside', 'rise']]],
+    ['.game', [['.arcade-frame', 'wipe'], ['.game-copy', 'fromRight']]],
+    ['#research', [['.wide', 'fromLeft'], ['.tall', 'fromRight'], ['.chapter-aside', 'rise']]],
+    ['.research', [['.map', 'zoom'], ['.research-copy', 'rise']]],
+    ['#study', [['.wide', 'rise'], ['.tall', 'focus'], ['.chapter-aside', 'rise']]],
+    ['.study', [['.orb', 'lens'], ['h2', 'rise'], ['.round', 'zoom']]],
+    ['.about', [['.portrait', 'wipe'], ['h2 span', 'rise']]],
+    ['.personal-intro', [['.intro-opening', 'fromLeft'], ['.intro-closing', 'fromRight']]],
+    ['.skills', [['h2', 'wipe'], ['.tech', 'rise'], ['.skill-copy article', 'rise']]],
+    ['.contact', [['h2', 'focus'], ['p', 'rise'], ['.contact-actions', 'rise']]]
+  ];
+  const effectsByPanel = new Map();
+  const shown = new Set();
+  const running = new Map();
+  function stop(panel) {
+    running.get(panel)?.forEach(animation => animation.cancel());
+    running.delete(panel);
+  }
+  const observer = new IntersectionObserver(entries => {
+    for (const {target, intersectionRatio} of entries) {
+      if (intersectionRatio < .08) {
+        shown.delete(target);
+        stop(target);
+        continue;
+      }
+      if (intersectionRatio < .34 || shown.has(target)) continue;
+      shown.add(target);
+      if (reduced.matches || target.contains(document.activeElement) && document.activeElement !== target) continue;
+      const animations = effectsByPanel.get(target).map(([node, effect], index) => {
+        const delay = Math.min(index * 65, 260);
+        return node.animate([opening[effect], resting[effect]], {
+          duration: effect === 'wipe' || effect === 'lens' ? 760 : 580,
+          delay,
+          easing: 'cubic-bezier(.2,.72,.25,1)',
+          fill: 'backwards'
+        });
+      });
+      running.set(target, animations);
+      Promise.allSettled(animations.map(animation => animation.finished)).then(() => {
+        if (running.get(target) === animations) running.delete(target);
+      });
+    }
+  }, {threshold: [.07, .34]});
+  for (const [selector, steps] of treatments) {
+    for (const panel of rail.querySelectorAll(selector)) {
+      const effects = steps.flatMap(([children, effect]) =>
+        [...panel.querySelectorAll(children)].map(node => [node, effect])
+      );
+      effectsByPanel.set(panel, effects);
+      panel.addEventListener('focusin', event => {
+        if (event.target !== panel) stop(panel);
+      });
+      observer.observe(panel);
+    }
+  }
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) for (const panel of running.keys()) stop(panel);
+  });
+}
+setupSlideEffects();
+
+</script>
+</body>
+</html>
